@@ -17,8 +17,8 @@ wget https://repo.continuum.io/archive/Anaconda2-4.2.0-Linux-x86_64.sh
 bash Anaconda2-4.2.0-Linux-x86_64.sh -b
 echo "export PATH=\"$HOME/anaconda2/bin:\$PATH\"" >> ~/.bashrc
 export PATH="$HOME/anaconda2/bin:$PATH"
-#conda install -y bcolz
-#conda upgrade -y --all
+conda install -y bcolz
+conda upgrade -y --all
 
 pip install theano
 echo "[global]
@@ -49,5 +49,8 @@ echo "c.NotebookApp.password = u'"$jupass"'" >> $HOME/.jupyter/jupyter_notebook_
 echo "c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 mkdir nbs
+
+##fix for running jupyter notebook on bash for windows
 conda install -c jzuhone zeromq=4.1.dev0
+
 
