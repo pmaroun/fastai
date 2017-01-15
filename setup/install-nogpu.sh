@@ -51,6 +51,7 @@ c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
 mkdir nbs
 
 ##fix for running jupyter notebook on bash for windows
+##https://github.com/Microsoft/BashOnWindows/issues/185
 conda install -c jzuhone zeromq=4.1.dev0
 
 
