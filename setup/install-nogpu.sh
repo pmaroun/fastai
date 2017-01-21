@@ -54,4 +54,7 @@ mkdir nbs
 ##https://github.com/Microsoft/BashOnWindows/issues/185
 conda install -c jzuhone zeromq=4.1.dev0
 
+pip install kaggle-cli
+
+
 
