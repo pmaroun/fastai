@@ -71,7 +71,7 @@ def create_cats_dogs(path):
 		shutil.move(f,dogs_path)    
 
 def main():
-	parent_path = '~data/dogs-vs-cats-redux'
+	parent_path = '../../data/dogs-vs-cats-redux'
 	train_zip_path = os.path.join(parent_path,'train.zip')
 	test_zip_path = os.path.join(parent_path,'test.zip')
 	train_valid_percent_split = 0.9
