@@ -41,7 +41,7 @@ def train_valid_folders(path,percent=0.8,flag=0):
 			shutil.move(f,train_path)
 				
 
-def sample_folder(path, percent=0.95):
+def sample_folder(path, percent=0.05):
 	train_path = os.path.join(path,'train')
 	all_train = glob(os.path.join(train_path,'*.*'))
 	sample_path = os.path.join(path,'sample')
@@ -75,7 +75,7 @@ def main():
 	train_zip_path = os.path.join(parent_path,'train.zip')
 	test_zip_path = os.path.join(parent_path,'test.zip')
 	train_valid_percent_split = 0.9
-	train_sample_percent_split = 0.95	
+	train_sample_percent_split = 0.05	
 	
 	with zipfile.ZipFile(train_zip_path, "r") as z:
 		z.extractall(parent_path)

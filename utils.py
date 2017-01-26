@@ -12,7 +12,6 @@ from itertools import chain
 import pandas as pd
 import PIL
 from PIL import Image
-import cv2
 from numpy.random import random, permutation, randn, normal, uniform, choice
 from numpy import newaxis
 import scipy
@@ -46,11 +45,11 @@ from keras.optimizers import SGD, RMSprop, Adam
 from keras.utils.layer_utils import layer_from_config
 from keras.metrics import categorical_crossentropy, categorical_accuracy
 from keras.layers.convolutional import *
-from keras.callbacks import ReduceLROnPlateau
 from keras.preprocessing import image, sequence
 from keras.preprocessing.text import Tokenizer
 
 from vgg16 import *
+from vgg16bn import *
 np.set_printoptions(precision=4, linewidth=100)
 
 
@@ -199,6 +198,12 @@ def mk_square(img):
 
 def vgg_ft(out_dim):
     vgg = Vgg16()
+    vgg.ft(out_dim)
+    model = vgg.model
+    return model
+
+def vgg_ft_bn(out_dim):
+    vgg = Vgg16BN()
     vgg.ft(out_dim)
     model = vgg.model
     return model
