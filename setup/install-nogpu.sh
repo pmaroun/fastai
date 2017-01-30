@@ -43,18 +43,21 @@ tar -zxf cudnn.tgz
 #sudo cp lib64/* /usr/local/cuda/lib64/
 #sudo cp include/* /usr/local/cuda/include/
 
-#jupyter notebook --generate-config
-#jupass=`python -c "from notebook.auth import passwd; print(passwd())"`
-#echo "c.NotebookApp.password = u'"$jupass"'" >> $HOME/.jupyter/jupyter_notebook_config.py
-#echo "c.NotebookApp.ip = '*'
-#c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
-#mkdir nbs
+jupyter notebook --generate-config
+jupass=`python -c "from notebook.auth import passwd; print(passwd())"`
+echo "c.NotebookApp.password = u'"$jupass"'" >> $HOME/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False" >> $HOME/.jupyter/jupyter_notebook_config.py
+mkdir nbs
 
-##fix for running jupyter notebook on bash for windows
-##https://github.com/Microsoft/BashOnWindows/issues/185
-#conda install -c jzuhone zeromq=4.1.dev0
+# kaggle cli
+pip install kaggle-cli
 
-#pip install kaggle-cli
+# npm 
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
+#azure cli
+sudo npm install -g azure-cli
 
 
