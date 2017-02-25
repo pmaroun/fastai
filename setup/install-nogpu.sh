@@ -60,4 +60,7 @@ sudo apt-get install -y nodejs
 #azure cli
 sudo npm install -g azure-cli
 
+#ffmpeg for animations
+sudo apt-get install ffmpeg
+
 
